@@ -15,9 +15,9 @@ cd jmeter-master/
 docker build --tag dinusha00/jmmaster:latest .
 ```
 
-## Start Image
+## Start Contrainers
 
-### Slave Nodes
+### Start Slave Nodes
 ```bash
 sudo docker run -dit --name slave01 dinusha00/jmserver /bin/bash
 
@@ -27,14 +27,14 @@ sudo docker run -dit --name slave03 dinusha00/jmserver /bin/bash
 
 ```
 
-### Master Nodes
+### Start Master Nodes
 ```bash
 sudo docker run -dit --name master dinusha00/jmmaster /bin/bash
 
 ```
 
 
-## Extract Slave Node IPs
+## Extract Slave Node IPs for Distributed Mode
 
 ```bash
 sudo docker inspect --format '{{ .Name }} => {{ .NetworkSettings.IPAddress }}' $(sudo docker ps -a -q)
@@ -50,7 +50,7 @@ Use either of below options to go inside the node
 - SSH 
 - Docker desktop CLI button
 
-## Create the test jmeter load test inside the master/client node
+## Create the Test Jmeter Load Test Inside the Master/Client node
 - Copy from jmeter-docker/sample-test/sample-test.jmx
 
 ## Run Standalone Mode
@@ -60,7 +60,7 @@ jmeter -n -t sample-test/sample-test.jmx -Jserver.rmi.ssl.disable=true
 
 ```
 
-## Result Standalone Mode
+## Result of Standalone Mode
 
 ```bash
 Aug 24, 2020 9:40:27 AM java.util.prefs.FileSystemPreferences$1 run
@@ -83,7 +83,7 @@ Tidying up ...    @ Mon Aug 24 09:40:58 GMT 2020 (1598262058297)
 jmeter -n -t sample-test/sample-test.jmx -R172.17.0.3,172.17.0.4,172.17.0.5 -Jserver.rmi.ssl.disable=true
 ```
 
-## Result Distributed Mode
+## Result of Distributed Mode
 ```bash
 Creating summariser <summary>
 Created the tree successfully using sample-test/sample-test.jmx

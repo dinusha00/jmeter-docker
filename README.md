@@ -15,7 +15,7 @@ cd jmeter-master/
 docker build --tag dinusha00/jmmaster:latest .
 ```
 
-## Start Contrainers
+## Start Containers
 
 ### Start Slave Nodes
 ```bash

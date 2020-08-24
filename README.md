@@ -1,6 +1,6 @@
 # jmeter-docker
 
-Docker files and test jmeter JMX file to start a jmeter cluster and run a stanalone and distributed load test
+Docker files and test jmeter JMX file to start a jmeter cluster and run a standalone and distributed load test
 
 ## Build Image from Docker File
 
